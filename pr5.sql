@@ -39,6 +39,18 @@ from student s
 left join borrows b on s.sid=b.sid
 group by s.name,s.sid,s.gender;
 
+#MongoDB
+db.createCollection("library")
+db.library.insert({"ISBN": 123 , "Title": 'database', "Author": 'ABC', "Publisher": 'WXYZ', "S_Name": 
+'jeevan', "S_Gender":'Male'})
+db.library.insert({"ISBN": 124, "Title": 'algorithm', "Author": 'DEF', "Publisher": 'ABCD', "S_Name": 
+'harsha', "S_Gender":'Male'})
+db.library.insert({"ISBN": 125, "Title": 'database', "Author": 'DEF', "Publisher": 'ABCD', "S_Name": 
+'namitha', "S_Gender":'Female'})
+db.library.insert({"ISBN": 126, "Title": 'java', "Author": 'DEF', "Publisher": 'ABCD', "S_Name": 'anjali', 
+"S_Gender":'Female'})
+>db.library.find({“Author”: ‘ABC’})
+>db.library.find({“Title”: “database”},{“s_name”:1, _id: 0}). pretty()
 
 psql)
 set serveroutput on
