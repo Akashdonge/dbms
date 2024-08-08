@@ -27,13 +27,13 @@ create table part(
  insert into supply values(2,22,122,13);
  insert into supply values(3,22,121,14);
  
- select * from part where 
+1) select * from part where 
     pid in(select pid from supply where sid in(select sid from supplier where sname='akash'));
     
-  select sname from supplier where sid in
+2) select sname from supplier where sid in
   (select sid from supply where pid in(select pid from part where pname='part b'));   
   
-  delete from part
+ 3) delete from part
      where pcolor='red';
      
      select * from part;
